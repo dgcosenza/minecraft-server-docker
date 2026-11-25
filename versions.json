@@ -30,9 +30,9 @@
   "base_digest": "sha256:8aa5a7bf5a1955bddbe7d74fcdd0b91ab30e74362a8b73af672b0481b35b44a0",
   "debian_version": "13.8",
   "build_date": "2026-11-25",
-  "built_at_utc": "2026-11-25T22:30:00Z",
-  "image_digest": "dgcosenza/minecraft-server@sha256:98b69d2619443ada75cedfc52be68e3bc26d90e27533b211764df5090d454e3c",
-  "ghcr_digest": "ghcr.io/dgcosenza/minecraft-server@sha256:98b69d2619443ada75cedfc52be68e3bc26d90e27533b211764df5090d454e3c",
+  "built_at_utc": "2026-11-25T23:31:42Z",
+  "image_digest": "dgcosenza/minecraft-server@sha256:8affeed9c0f4426bf1072365405c0679192b53f805079b9c3c3b5c7962bb53d1",
+  "ghcr_digest": "ghcr.io/dgcosenza/minecraft-server@sha256:8affeed9c0f4426bf1072365405c0679192b53f805079b9c3c3b5c7962bb53d1",
   "fixable_critical_high": 0,
   "unfixed_cves": [
     "CVE-2025-69720",
