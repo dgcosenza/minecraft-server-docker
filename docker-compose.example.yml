@@ -1,0 +1,35 @@
+services:
+  mc:
+    image: dgcosenza/minecraft-server:latest
+    container_name: minecraft-server
+    restart: unless-stopped
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "VANILLA"
+      VERSION: "LATEST"
+      MEMORY: "2G"
+      JVM_OPTS: "--enable-native-access=ALL-UNNAMED"
+      # Provide RCON_PASSWORD from a .env file or secret manager (never commit secrets)
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      TZ: "UTC"
+    volumes:
+      # Ensure ./data is owned by UID:GID 1000:1000
+      - ./data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "mc-health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 2m

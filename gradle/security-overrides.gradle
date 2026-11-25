@@ -1,0 +1,28 @@
+// Gradle init script to enforce patched, vulnerability-free transitive versions
+// when building itzg/mc-image-helper from its official release tag.
+def micrometerCore = System.getenv("OVERRIDE_MICROMETER_CORE") ?: "1.16.9"
+def bcprovVersion = System.getenv("OVERRIDE_BCPROV") ?: "1.87"
+def scalaLibrary = System.getenv("OVERRIDE_SCALA_LIBRARY") ?: "2.13.18"
+def jackson3Version = System.getenv("OVERRIDE_JACKSON3") ?: "3.1.9"
+
+allprojects {
+    configurations.configureEach {
+        resolutionStrategy.eachDependency { details ->
+            def group = details.requested.group
+            def name = details.requested.name
+            if (group == "io.micrometer" && name == "micrometer-core") {
+                details.useVersion(micrometerCore)
+                details.because("Remediate CVE-2026-40983 and CVE-2026-40984")
+            } else if (group == "org.bouncycastle" && name == "bcprov-jdk18on") {
+                details.useVersion(bcprovVersion)
+                details.because("Remediate CVE-2026-8763 and CVE-2026-13506")
+            } else if (group == "org.scala-lang" && name == "scala-library") {
+                details.useVersion(scalaLibrary)
+                details.because("Remediate CVE-2022-36944 while preserving Scala 2.13 binary compatibility")
+            } else if (group == "tools.jackson.core" && (name == "jackson-core" || name == "jackson-databind")) {
+                details.useVersion(jackson3Version)
+                details.because("Remediate Jackson 3.1.x CVEs")
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "image": "dgcosenza/minecraft-server",
+  "upstream_name": "itzg/docker-minecraft-server",
+  "upstream_license": "Apache-2.0",
+  "packaging_license": "MIT",
+  "upstream_version": "2026.11.1",
+  "upstream_commit": "0699bd8497cb1e3c8e257fecd4320671194c6903",
+  "changelog_version": "2026.11.1",
+  "architectures": [
+    "linux/amd64",
+    "linux/arm64"
+  ],
+  "components": {
+    "Base OS": "Debian 13 (trixie-slim)",
+    "Java Runtime": "Eclipse Temurin jdk-25.0.5.1+2 (JRE)",
+    "itzg/docker-minecraft-server": "2026.11.1",
+    "itzg/mc-image-helper": "1.78.3 (source-built, patched deps)",
+    "itzg/mc-monitor": "1.21.0 (source-built)",
+    "itzg/mc-server-runner": "1.17.0 (source-built)",
+    "itzg/rcon-cli": "1.9.0 (source-built)",
+    "itzg/restify": "1.7.22 (source-built)"
+  },
+  "base_image": "debian:trixie-slim",
+  "base_digest": "sha256:8aa5a7bf5a1955bddbe7d74fcdd0b91ab30e74362a8b73af672b0481b35b44a0",
+  "debian_version": "13",
+  "build_date": "2026-11-25",
+  "built_at_utc": "",
+  "image_digest": "",
+  "ghcr_digest": "",
+  "fixable_critical_high": 0,
+  "unfixed_cves": []
+}
