@@ -15,8 +15,8 @@ ARG RESTIFY_VERSION=1.7.22
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 WORKDIR /build
-# hadolint ignore=DL3062
 # Intentionally refresh golang.org/x/* security packages to latest patched releases on each daily build.
+# hadolint ignore=DL3062
 RUN set -eux; \
     mkdir -p /out; \
     build_tool() { \
