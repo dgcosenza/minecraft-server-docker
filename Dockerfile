@@ -15,6 +15,8 @@ ARG RESTIFY_VERSION=1.7.22
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 WORKDIR /build
+# hadolint ignore=DL3062
+# Intentionally refresh golang.org/x/* security packages to latest patched releases on each daily build.
 RUN set -eux; \
     mkdir -p /out; \
     build_tool() { \
@@ -219,4 +221,4 @@ STOPSIGNAL SIGTERM
 USER 1000:1000
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/image/scripts/start"]
-HEALTHCHECK --start-period=2m --retries=3 --interval=30s --timeout=10s CMD mc-health
+HEALTHCHECK --start-period=2m --retries=3 --interval=30s --timeout=10s CMD ["mc-health"]
