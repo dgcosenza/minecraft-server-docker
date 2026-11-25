@@ -10,8 +10,14 @@
     "linux/amd64",
     "linux/arm64"
   ],
+  "sizes_mb": {
+    "amd64": "206.2",
+    "arm64": "537.7"
+  },
+  "signed": true,
+  "slsa_provenance": true,
   "components": {
-    "Base OS": "Debian 13 (trixie-slim)",
+    "Base OS": "Debian 13.8 (trixie-slim)",
     "Java Runtime": "Eclipse Temurin jdk-25.0.5.1+2 (JRE)",
     "itzg/docker-minecraft-server": "2026.11.1",
     "itzg/mc-image-helper": "1.78.3 (source-built, patched deps)",
@@ -22,11 +28,34 @@
   },
   "base_image": "debian:trixie-slim",
   "base_digest": "sha256:8aa5a7bf5a1955bddbe7d74fcdd0b91ab30e74362a8b73af672b0481b35b44a0",
-  "debian_version": "13",
+  "debian_version": "13.8",
   "build_date": "2026-11-25",
-  "built_at_utc": "",
-  "image_digest": "",
-  "ghcr_digest": "",
+  "built_at_utc": "2026-11-25T12:45:52Z",
+  "image_digest": "dgcosenza/minecraft-server@sha256:f8649347648e074caa299866ded28aab8f86dbe084bada8bac3eae8932f85b46",
+  "ghcr_digest": "ghcr.io/dgcosenza/minecraft-server@sha256:f8649347648e074caa299866ded28aab8f86dbe084bada8bac3eae8932f85b46",
   "fixable_critical_high": 0,
-  "unfixed_cves": []
+  "unfixed_cves": [
+    "CVE-2025-69720",
+    "CVE-2026-105437",
+    "CVE-2026-107494",
+    "CVE-2026-111760",
+    "CVE-2026-113351",
+    "CVE-2026-114466",
+    "CVE-2026-115506",
+    "CVE-2026-117610",
+    "CVE-2026-118370",
+    "CVE-2026-119373",
+    "CVE-2026-119374",
+    "CVE-2026-119379",
+    "CVE-2026-12064",
+    "CVE-2026-124709",
+    "CVE-2026-16742",
+    "CVE-2026-54369",
+    "CVE-2026-76642",
+    "CVE-2026-78408",
+    "CVE-2026-78409",
+    "CVE-2026-78410",
+    "CVE-2026-8458",
+    "CVE-2026-9538"
+  ]
 }

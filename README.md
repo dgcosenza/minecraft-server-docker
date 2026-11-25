@@ -27,7 +27,7 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 <!-- versions:start -->
 | Component | Resolved Version |
 | --- | --- |
-| Base OS | `Debian 13 (trixie-slim)` |
+| Base OS | `Debian 13.8 (trixie-slim)` |
 | Java Runtime | `Eclipse Temurin jdk-25.0.5.1+2 (JRE)` |
 | itzg/docker-minecraft-server | `2026.11.1` |
 | itzg/mc-image-helper | `1.78.3 (source-built, patched deps)` |
@@ -36,8 +36,19 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 | itzg/rcon-cli | `1.9.0 (source-built)` |
 | itzg/restify | `1.7.22 (source-built)` |
 | Architectures | `linux/amd64, linux/arm64` |
+| Uncompressed size (per arch) | `amd64: 206.2 MB, arm64: 537.7 MB` |
 | Last verified build (UTC) | `2026-11-25` |
-| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** |
+| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:f8649347648e074caa299866ded28aab8f86dbe084bada8bac3eae8932f85b46` |
+| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:f8649347648e074caa299866ded28aab8f86dbe084bada8bac3eae8932f85b46` |
+| Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
+| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** (22 upstream-unfixed) |
+
+**Recent upstream changes:**
+- **itzg/docker-minecraft-server:** `2026.11.1` -> `2026.11.1` (commit `0699bd8497cb`)
+- **Upstream version changed:** `no`
+- **Eclipse Temurin 25 JRE:** `jdk-25.0.5.1+2` (amd64 & arm64 verified via Adoptium API)
+- **Source-built helpers:** `mc-image-helper 1.78.3`, `mc-monitor 1.21.0`, `mc-server-runner 1.17.0`, `rcon-cli 1.9.0`, `restify 1.7.22`
+- **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`
 <!-- versions:end -->
 
 ---
