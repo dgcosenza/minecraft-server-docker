@@ -47,6 +47,9 @@ ARG MICROMETER_CORE_VERSION=1.16.9
 ARG BCPROV_VERSION=1.87
 ARG SCALA_LIBRARY_VERSION=2.13.18
 ARG JACKSON3_VERSION=3.1.9
+ARG LOGBACK_VERSION=1.5.38
+ARG CLASSGRAPH_VERSION=4.8.200
+ARG KOTLIN_VERSION=1.6.21
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -63,6 +66,9 @@ RUN set -eux; \
     OVERRIDE_BCPROV="${BCPROV_VERSION}" \
     OVERRIDE_SCALA_LIBRARY="${SCALA_LIBRARY_VERSION}" \
     OVERRIDE_JACKSON3="${JACKSON3_VERSION}" \
+    OVERRIDE_LOGBACK="${LOGBACK_VERSION}" \
+    OVERRIDE_CLASSGRAPH="${CLASSGRAPH_VERSION}" \
+    OVERRIDE_KOTLIN="${KOTLIN_VERSION}" \
       ./gradlew --no-daemon --init-script /tmp/security-overrides.gradle installDist -x test; \
     rm -f /src/build/install/mc-image-helper/lib/*-windows-x86_64.jar; \
     if [ "${TARGETARCH}" = "amd64" ]; then \
