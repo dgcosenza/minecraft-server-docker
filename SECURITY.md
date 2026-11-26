@@ -9,8 +9,8 @@ Only the latest daily build (`latest`) receives security updates. Immutable date
 ## Vulnerability Scanning & Gates
 
 - **Preflight**: Hadolint (blocking on warning+), Gitleaks full-history secret scanning, and public-content/attribution checks run on every push and pull request.
-- **Trivy** (OS + Go + Java libraries): SARIF uploaded to GitHub Code Scanning; table and JSON reports retained for 90 days; **blocking hard gate** on any fixable `CRITICAL` or `HIGH` finding.
-- **Grype** (scanning Syft SPDX SBOM): **blocking hard gate** (`--only-fixed --fail-on high`); table report retained for 90 days.
+- **Trivy** (OS + Go + Java libraries): SARIF uploaded to GitHub Code Scanning; table and JSON reports retained for 90 days; **blocking hard gate** on any fixable vulnerability of any severity.
+- **Grype** (scanning Syft SPDX SBOM): **blocking hard gate** (`--only-fixed --fail-on negligible`, all severities); table report retained for 90 days.
 - **SBOM & Provenance**: SPDX-JSON and CycloneDX-JSON SBOMs per architecture attached as Cosign keyless OIDC attestations alongside SLSA Build L3 provenance.
 - **Runtime Integrity**: Eclipse Temurin 25 JRE tarballs and `Log4jPatcher.jar` are strictly SHA-256 verified at build time. Go helper binaries and `mc-image-helper` are compiled from pinned official source tags with patched toolchains and dependencies. No proprietary Mojang server binaries are bundled.
 
