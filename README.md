@@ -31,15 +31,15 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 | Java Runtime | `Eclipse Temurin jdk-25.0.5.1+2 (JRE)` |
 | itzg/docker-minecraft-server | `2026.11.1` |
 | itzg/mc-image-helper | `1.80.0 (source-built, patched deps)` |
-| itzg/mc-monitor | `1.21.0 (source-built)` |
+| itzg/mc-monitor | `1.21.1 (source-built)` |
 | itzg/mc-server-runner | `1.17.0 (source-built)` |
 | itzg/rcon-cli | `1.9.0 (source-built)` |
 | itzg/restify | `1.7.22 (source-built)` |
 | Architectures | `linux/amd64, linux/arm64` |
-| Uncompressed size (per arch) | `amd64: 207.0 MB, arm64: 540.2 MB` |
-| Last verified build (UTC) | `2026-11-25` |
-| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb` |
-| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb` |
+| Uncompressed size (per arch) | `amd64: 207.4 MB, arm64: 540.6 MB` |
+| Last verified build (UTC) | `2026-11-26` |
+| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:1505e4491093156e42295c1bc47d8c13204c8a1e2bb10cba9302525d67693f8c` |
+| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:1505e4491093156e42295c1bc47d8c13204c8a1e2bb10cba9302525d67693f8c` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
 | Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (22 upstream-unfixed) |
 
@@ -47,8 +47,8 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 - **itzg/docker-minecraft-server:** `2026.11.1` -> `2026.11.1` (commit `0699bd8497cb`)
 - **Upstream version changed:** `no`
 - **Eclipse Temurin 25 JRE:** `jdk-25.0.5.1+2` (amd64 & arm64 verified via Adoptium API)
-- **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.0`, `mc-server-runner 1.17.0`, `rcon-cli 1.9.0`, `restify 1.7.22`
-- **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`
+- **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.1`, `mc-server-runner 1.17.0`, `rcon-cli 1.9.0`, `restify 1.7.22`
+- **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`, `logback 1.5.38`, `classgraph 4.8.200`, `kotli...
 <!-- versions:end -->
 
 ---

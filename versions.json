@@ -11,8 +11,8 @@
     "linux/arm64"
   ],
   "sizes_mb": {
-    "amd64": "207.0",
-    "arm64": "540.2"
+    "amd64": "207.4",
+    "arm64": "540.6"
   },
   "signed": true,
   "slsa_provenance": true,
@@ -21,7 +21,7 @@
     "Java Runtime": "Eclipse Temurin jdk-25.0.5.1+2 (JRE)",
     "itzg/docker-minecraft-server": "2026.11.1",
     "itzg/mc-image-helper": "1.80.0 (source-built, patched deps)",
-    "itzg/mc-monitor": "1.21.0 (source-built)",
+    "itzg/mc-monitor": "1.21.1 (source-built)",
     "itzg/mc-server-runner": "1.17.0 (source-built)",
     "itzg/rcon-cli": "1.9.0 (source-built)",
     "itzg/restify": "1.7.22 (source-built)"
@@ -29,10 +29,10 @@
   "base_image": "debian:trixie-slim",
   "base_digest": "sha256:8aa5a7bf5a1955bddbe7d74fcdd0b91ab30e74362a8b73af672b0481b35b44a0",
   "debian_version": "13.8",
-  "build_date": "2026-11-25",
-  "built_at_utc": "2026-11-25T23:41:50Z",
-  "image_digest": "dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb",
-  "ghcr_digest": "ghcr.io/dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb",
+  "build_date": "2026-11-26",
+  "built_at_utc": "2026-11-26T02:49:10Z",
+  "image_digest": "dgcosenza/minecraft-server@sha256:1505e4491093156e42295c1bc47d8c13204c8a1e2bb10cba9302525d67693f8c",
+  "ghcr_digest": "ghcr.io/dgcosenza/minecraft-server@sha256:1505e4491093156e42295c1bc47d8c13204c8a1e2bb10cba9302525d67693f8c",
   "fixable_critical_high": 0,
   "unfixed_cves": [
     "CVE-2025-69720",
