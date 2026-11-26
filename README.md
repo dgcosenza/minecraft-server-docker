@@ -41,7 +41,7 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 | Published multi-arch digest | `dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb` |
 | GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:7481fe3e29a08c1c157c358a6f52629ff34538cbc1eded7f3fb99970010fc6bb` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
-| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** (22 upstream-unfixed) |
+| Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (22 upstream-unfixed) |
 
 **Recent upstream changes:**
 - **itzg/docker-minecraft-server:** `2026.11.1` -> `2026.11.1` (commit `0699bd8497cb`)
@@ -241,7 +241,7 @@ gh attestation verify oci://ghcr.io/dgcosenza/minecraft-server:latest --owner dg
 ## Security
 
 - **Preflight gates:** Every push and pull request runs **Hadolint** (blocking on warning+), **Gitleaks** secret scanning across full git history, and **public-content/attribution** checks.
-- **Vulnerability scan policy:** Every build generates **SPDX** and **CycloneDX** SBOMs with **Syft** per architecture, scans with **Trivy** (table, JSON, SARIF upload, blocking `--ignore-unfixed` gate) and **Grype** scanning the SPDX SBOM (`--only-fixed --fail-on high`), and enforces a **Dive** efficiency gate (`lowestEfficiency: 0.95`, `highestUserWastedPercent: 0.05`).
+- **Vulnerability scan policy (all severities with a fix):** Every build generates **SPDX** and **CycloneDX** SBOMs with **Syft** per architecture, scans with **Trivy** (table, JSON, SARIF upload, blocking `--ignore-unfixed` gate) and **Grype** scanning the SPDX SBOM (`--only-fixed --fail-on negligible`), and enforces a **Dive** efficiency gate (`lowestEfficiency: 0.95`, `highestUserWastedPercent: 0.05`).
 - **Source-remediated helpers:** All `itzg` Go utilities (`mc-monitor`, `mc-server-runner`, `rcon-cli`, `restify`) are compiled from official tags with the current patched Go toolchain and updated `golang.org/x/*` packages; `mc-image-helper` is compiled from source with patched transitive Java dependencies; prebuilt `tianon/gosu` is replaced by a zero-Go `setpriv` wrapper.
 - **Rootless & read-only ready:** Runs as unprivileged `minecraft` (`1000:1000`) by default and is smoke-tested in CI with `--read-only`, `--cap-drop ALL`, and `--security-opt no-new-privileges:true`.
 - **Dependency automation:** Renovate (`renovate.json`) pins base image digests and GitHub Action commit SHAs; Dependabot security alerts and OpenSSF Scorecard monitoring are enabled.
@@ -263,7 +263,7 @@ docker buildx build --platform linux/amd64 --load -t dgcosenza/minecraft-server:
 
 1. **Preflight & upstream check:** Runs public-content checks, **Hadolint**, and **Gitleaks**; resolves the latest official releases of `itzg/docker-minecraft-server`, `itzg/mc-image-helper`, `itzg/mc-monitor`, `itzg/mc-server-runner`, `itzg/rcon-cli`, and `itzg/restify` via the authenticated GitHub API (`GH_TOKEN`), resolves the latest Eclipse Temurin 25 JRE (`x64` + `aarch64`) checksums from Adoptium, resolves patched Maven dependency versions and current Debian/Go/JDK base digests, and emits `upstream-changes.md`.
 2. **Multi-arch no-cache rebuild:** Rebuilds natively on `linux/amd64` and `linux/arm64` runners with `--no-cache` on schedule, upgrading Debian 13 packages and recompiling Go and Java helpers from source.
-3. **Vulnerability fix & hard gate:** Generates per-arch **Syft** SPDX + CycloneDX SBOMs, diffs against `versions.json`, uploads **Trivy** SARIF, and blocks publication on any fixable `CRITICAL` or `HIGH` finding in **Trivy** or **Grype** (scanning the SPDX SBOM), alongside the **Dive** efficiency gate.
+3. **Vulnerability fix & hard gate:** Generates per-arch **Syft** SPDX + CycloneDX SBOMs, diffs against `versions.json`, uploads **Trivy** SARIF, and blocks publication on any fixable finding of any severity in **Trivy** or **Grype** (scanning the SPDX SBOM), alongside the **Dive** efficiency gate.
 4. **Native smoke tests:** Runs [`tests/smoke.sh`](https://github.com/dgcosenza/minecraft-server-docker/blob/main/tests/smoke.sh) natively on both architectures, asserting zero baked Mojang JARs, non-root `1000:1000` execution, EULA refusal check, read-only + `cap_drop ALL` live startup, `mc-health`, `rcon-cli`, negative healthcheck failure, and clean `SIGTERM` world save.
 5. **Dual-registry publish & signing:** Assembles the multi-arch OCI manifest index on **GHCR** and mirrors the identical digest to **Docker Hub** with tags `latest`, `<upstream-version>`, `<upstream-version>-<YYYYMMDD>`, and `sha-<short>`; signs every digest and attaches SPDX/CycloneDX SBOM attestations via **Cosign** keyless OIDC; emits **SLSA Build L3** provenance; and publishes a signed **GitHub Release** with checksums and SBOMs.
 6. **Automated documentation sync:** Commits updated `versions.json`, the README `Current Versions` block, and a dated `CHANGELOG.md` entry via `github-actions[bot]` (`[skip ci]`, validated by `public-check.sh`), then syncs the Docker Hub overview and short description.
