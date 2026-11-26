@@ -4,6 +4,9 @@ def micrometerCore = System.getenv("OVERRIDE_MICROMETER_CORE") ?: "1.16.9"
 def bcprovVersion = System.getenv("OVERRIDE_BCPROV") ?: "1.87"
 def scalaLibrary = System.getenv("OVERRIDE_SCALA_LIBRARY") ?: "2.13.18"
 def jackson3Version = System.getenv("OVERRIDE_JACKSON3") ?: "3.1.9"
+def logbackVersion = System.getenv("OVERRIDE_LOGBACK") ?: "1.5.38"
+def classgraphVersion = System.getenv("OVERRIDE_CLASSGRAPH") ?: "4.8.200"
+def kotlinVersion = System.getenv("OVERRIDE_KOTLIN") ?: "1.6.21"
 
 allprojects {
     configurations.configureEach {
@@ -22,6 +25,15 @@ allprojects {
             } else if (group == "tools.jackson.core" && (name == "jackson-core" || name == "jackson-databind")) {
                 details.useVersion(jackson3Version)
                 details.because("Remediate Jackson 3.1.x CVEs")
+            } else if (group == "ch.qos.logback" && (name == "logback-core" || name == "logback-classic")) {
+                details.useVersion(logbackVersion)
+                details.because("Remediate CVE-2026-10532 and CVE-2026-9828")
+            } else if (group == "io.github.classgraph" && name == "classgraph") {
+                details.useVersion(classgraphVersion)
+                details.because("Remediate CVE-2021-47621")
+            } else if (group == "org.jetbrains.kotlin" && (name == "kotlin-stdlib" || name == "kotlin-stdlib-common")) {
+                details.useVersion(kotlinVersion)
+                details.because("Remediate CVE-2020-29582 and CVE-2022-24329")
             }
         }
     }

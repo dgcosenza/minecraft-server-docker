@@ -100,6 +100,9 @@ def main() -> int:
     bcprov_ver = resolve_maven_latest("org.bouncycastle", "bcprov-jdk18on", "1.", "1.87")
     scala_ver = resolve_maven_latest("org.scala-lang", "scala-library", "2.13.", "2.13.18")
     jackson3_ver = resolve_maven_latest("tools.jackson.core", "jackson-databind", "3.1.", "3.1.9")
+    logback_ver = resolve_maven_latest("ch.qos.logback", "logback-core", "1.5.", "1.5.38")
+    classgraph_ver = resolve_maven_latest("io.github.classgraph", "classgraph", "4.8.", "4.8.200")
+    kotlin_ver = resolve_maven_latest("org.jetbrains.kotlin", "kotlin-stdlib", "1.6.", "1.6.21")
 
     debian_digest = resolve_hub_digest("debian", "trixie-slim")
     golang_digest = resolve_hub_digest("golang", "1.27-trixie")
@@ -127,7 +130,7 @@ def main() -> int:
         f"- **Upstream version changed:** `{changed}`",
         f"- **Eclipse Temurin 25 JRE:** `{jre_version}` (amd64 & arm64 verified via Adoptium API)",
         f"- **Source-built helpers:** `mc-image-helper {mc_helper}`, `mc-monitor {mc_monitor}`, `mc-server-runner {mc_runner}`, `rcon-cli {rcon_cli}`, `restify {restify}`",
-        f"- **Java security overrides:** `micrometer-core {micrometer_ver}`, `bcprov-jdk18on {bcprov_ver}`, `scala-library {scala_ver}`, `tools.jackson.core {jackson3_ver}`",
+        f"- **Java security overrides:** `micrometer-core {micrometer_ver}`, `bcprov-jdk18on {bcprov_ver}`, `scala-library {scala_ver}`, `tools.jackson.core {jackson3_ver}`, `logback {logback_ver}`, `classgraph {classgraph_ver}`, `kotlin-stdlib {kotlin_ver}`",
     ]
     if release_body:
         changes_lines.append("")
@@ -156,6 +159,9 @@ def main() -> int:
         "bcprov_version": bcprov_ver,
         "scala_library_version": scala_ver,
         "jackson3_version": jackson3_ver,
+        "logback_version": logback_ver,
+        "classgraph_version": classgraph_ver,
+        "kotlin_version": kotlin_ver,
         "debian_base": debian_base,
         "base_digest": debian_digest,
         "golang_image": golang_image,

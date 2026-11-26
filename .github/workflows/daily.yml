@@ -207,6 +207,9 @@ jobs:
             BCPROV_VERSION=${{ needs.resolve.outputs.bcprov_version }}
             SCALA_LIBRARY_VERSION=${{ needs.resolve.outputs.scala_library_version }}
             JACKSON3_VERSION=${{ needs.resolve.outputs.jackson3_version }}
+            LOGBACK_VERSION=${{ needs.resolve.outputs.logback_version }}
+            CLASSGRAPH_VERSION=${{ needs.resolve.outputs.classgraph_version }}
+            KOTLIN_VERSION=${{ needs.resolve.outputs.kotlin_version }}
             IMAGE_CREATED=${{ needs.resolve.outputs.created }}
             IMAGE_REVISION=${{ github.sha }}
             IMAGE_SOURCE=https://github.com/${{ github.repository }}
@@ -374,6 +377,9 @@ jobs:
             BCPROV_VERSION=${{ needs.resolve.outputs.bcprov_version }}
             SCALA_LIBRARY_VERSION=${{ needs.resolve.outputs.scala_library_version }}
             JACKSON3_VERSION=${{ needs.resolve.outputs.jackson3_version }}
+            LOGBACK_VERSION=${{ needs.resolve.outputs.logback_version }}
+            CLASSGRAPH_VERSION=${{ needs.resolve.outputs.classgraph_version }}
+            KOTLIN_VERSION=${{ needs.resolve.outputs.kotlin_version }}
             IMAGE_CREATED=${{ needs.resolve.outputs.created }}
             IMAGE_REVISION=${{ github.sha }}
             IMAGE_SOURCE=https://github.com/${{ github.repository }}
