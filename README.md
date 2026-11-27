@@ -1,16 +1,33 @@
 # Minecraft Server on Debian 13 (trixie) + Eclipse Temurin 25 JRE
 
-[![Daily Minecraft Server image](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/daily.yml/badge.svg)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/daily.yml)
-[![Packaging License: MIT](https://img.shields.io/badge/packaging-MIT-blue.svg)](https://github.com/dgcosenza/minecraft-server-docker/blob/main/LICENSE)
-[![Upstream License: Apache-2.0](https://img.shields.io/badge/upstream-Apache--2.0-blue.svg)](https://github.com/itzg/docker-minecraft-server/blob/master/LICENSE)
-[![Signed with Cosign](https://img.shields.io/badge/signed-cosign%20OIDC-blueviolet.svg)](#supply-chain-verification)
-[![SLSA Level 3](https://img.shields.io/badge/SLSA-Level%203-brightgreen.svg)](#supply-chain-verification)
-[![Architectures](https://img.shields.io/badge/arch-amd64%20%7C%20arm64-informational.svg)](#supported-architectures)
+[![Daily CI](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/daily.yml/badge.svg)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/daily.yml)
+[![OpenSSF Scorecard Workflow](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/scorecard.yml/badge.svg)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/scorecard.yml)
+[![Gitleaks Secret Scan](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/gitleaks.yml)
+[![Public Content Check](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/public-check.yml/badge.svg)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/public-check.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/dgcosenza/minecraft-server-docker/badge)](https://scorecard.dev/viewer/?uri=github.com/dgcosenza/minecraft-server-docker)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/17162/badge)](https://www.bestpractices.dev/projects/17162)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dgcosenza/minecraft-server)](https://hub.docker.com/r/dgcosenza/minecraft-server)
-[![Docker Image Size](https://img.shields.io/docker/image-size/dgcosenza/minecraft-server/latest)](https://hub.docker.com/r/dgcosenza/minecraft-server)
-[![Latest Release](https://img.shields.io/github/v/release/dgcosenza/minecraft-server-docker?label=version)](https://github.com/dgcosenza/minecraft-server-docker/releases)
+
+[![Trivy + Grype: 0 Fixable CVEs](https://img.shields.io/badge/Trivy%20%2B%20Grype-0%20fixable%20CVEs-brightgreen?logo=trivy&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/security/code-scanning)
+[![Signed: Cosign OIDC](https://img.shields.io/badge/signed-Cosign%20OIDC-blueviolet)](https://github.com/dgcosenza/minecraft-server-docker#supply-chain-verification)
+[![SLSA Build L3](https://img.shields.io/badge/SLSA-Build%20L3-brightgreen)](https://github.com/dgcosenza/minecraft-server-docker/attestations)
+[![SBOM: SPDX + CycloneDX](https://img.shields.io/badge/SBOM-SPDX%20%2B%20CycloneDX-0A7BBB?logo=spdx&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/releases/latest)
+[![Base OS](https://img.shields.io/badge/base-Debian%2013%20(trixie--slim)-A81D33?logo=debian&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/blob/main/Dockerfile)
+[![Architectures](https://img.shields.io/badge/arch-amd64%20%7C%20arm64-007ec6?logo=linux&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker#supported-architectures)
+[![Healthcheck: CI Verified](https://img.shields.io/badge/healthcheck-CI%20verified-brightgreen?logo=docker&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker#healthcheck)
+[![Renovate Enabled](https://img.shields.io/badge/renovate-enabled-1A1F6C?logo=renovate&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/blob/main/renovate.json)
+[![Dependabot Enabled](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/blob/main/.github/dependabot.yml)
+[![Daily Rebuilds](https://img.shields.io/badge/rebuilds-daily-2088FF?logo=githubactions&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/actions/workflows/daily.yml)
+
+[![Latest Release](https://img.shields.io/github/v/release/dgcosenza/minecraft-server-docker?label=version&logo=github)](https://github.com/dgcosenza/minecraft-server-docker/releases/latest)
+[![Release Date](https://img.shields.io/github/release-date/dgcosenza/minecraft-server-docker?label=released&logo=github)](https://github.com/dgcosenza/minecraft-server-docker/releases/latest)
+[![Last Commit](https://img.shields.io/github/last-commit/dgcosenza/minecraft-server-docker?logo=github)](https://github.com/dgcosenza/minecraft-server-docker/commits/main)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dgcosenza/minecraft-server?logo=docker&logoColor=white)](https://hub.docker.com/r/dgcosenza/minecraft-server)
+[![Docker Image Size](https://img.shields.io/docker/image-size/dgcosenza/minecraft-server/latest?logo=docker&logoColor=white)](https://hub.docker.com/r/dgcosenza/minecraft-server)
+[![Registries: Docker Hub + GHCR](https://img.shields.io/badge/registries-Docker%20Hub%20%2B%20GHCR-2496ED?logo=docker&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/pkgs/container/minecraft-server)
+[![Packaging License: MIT](https://img.shields.io/badge/packaging-MIT-blue?logo=opensourceinitiative&logoColor=white)](https://github.com/dgcosenza/minecraft-server-docker/blob/main/LICENSE)
+[![Upstream License](https://img.shields.io/badge/upstream-Apache--2.0-green?logo=opensourceinitiative&logoColor=white)](https://github.com/itzg/docker-minecraft-server/blob/master/LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/dgcosenza/minecraft-server-docker?logo=github)](https://github.com/dgcosenza/minecraft-server-docker/issues)
+[![FNX Labs Catalog](https://img.shields.io/badge/catalog-FNX%20Labs-0b1020?logo=githubpages&logoColor=white)](https://dgcosenza.github.io/)
 
 A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclipse Temurin 25 JRE** container image for **Minecraft Java Edition Server**, built with source-compiled `itzg` helper binaries and security-patched `mc-image-helper`, drop-in compatible with `itzg/minecraft-server`, maintained by **Daniel G. Cosenza from FNX Labs**.
 
