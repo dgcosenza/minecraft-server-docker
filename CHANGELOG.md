@@ -10,6 +10,22 @@ Maintained by **Daniel G. Cosenza from FNX Labs**.
 
 <!-- changelog:auto -->
 
+## [2026.11.1] — 2026-11-27
+
+### Automated Daily Build
+- Verified components: Base OS `Debian 13.8 (trixie-slim)`, Java Runtime `Eclipse Temurin jdk-25.0.5.1+2 (JRE)`, itzg/docker-minecraft-server `2026.11.1`, itzg/mc-image-helper `1.80.0 (source-built, patched deps)`, itzg/mc-monitor `1.21.1 (source-built)`, itzg/mc-server-runner `1.18.0 (source-built)`, itzg/rcon-cli `1.9.0 (source-built)`, itzg/restify `1.7.22 (source-built)`.
+- Architectures verified: `linux/amd64, linux/arm64` (native smoke tests + Dive efficiency gate).
+- Upstream changes:
+  - **itzg/docker-minecraft-server:** `2026.11.1` -> `2026.11.1` (commit `0699bd8497cb`)
+  - **Upstream version changed:** `no`
+  - **Eclipse Temurin 25 JRE:** `jdk-25.0.5.1+2` (amd64 & arm64 verified via Adoptium API)
+  - **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.1`, `mc-server-runner 1.18.0`, `rcon-cli 1.9.0`, `restify 1.7.22`
+  - **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`, `logback 1.5.38`, `classgraph 4.8.200`, `kotli...
+- Vulnerability gate: **0 fixable findings of any severity** in Trivy and Grype (SBOM scan) (22 upstream-unfixed).
+- Published multi-arch digest (Docker Hub + GHCR): `dgcosenza/minecraft-server@sha256:8664fce8f8a98292ce318dcd5b2536c1712a755717f3c6b8e93a32cd6e8ab90c` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
+
+---
+
 ## [2026.11.1] — 2026-11-26
 
 ### Automated Daily Build
