@@ -34,13 +34,13 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 | itzg/mc-image-helper | `1.80.0 (source-built, patched deps)` |
 | itzg/mc-monitor | `1.21.1 (source-built)` |
 | itzg/mc-server-runner | `1.18.0 (source-built)` |
-| itzg/rcon-cli | `1.9.0 (source-built)` |
+| itzg/rcon-cli | `1.10.0 (source-built)` |
 | itzg/restify | `1.7.22 (source-built)` |
 | Architectures | `linux/amd64, linux/arm64` |
 | Uncompressed size (per arch) | `amd64: 207.6 MB, arm64: 541.1 MB` |
 | Last verified build (UTC) | `2026-11-27` |
-| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:8664fce8f8a98292ce318dcd5b2536c1712a755717f3c6b8e93a32cd6e8ab90c` |
-| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:8664fce8f8a98292ce318dcd5b2536c1712a755717f3c6b8e93a32cd6e8ab90c` |
+| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:3e1e729a70ec2591de06242cbd1c9c6b86df3e7c7620efc2e070bd0d33b5fdb2` |
+| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:3e1e729a70ec2591de06242cbd1c9c6b86df3e7c7620efc2e070bd0d33b5fdb2` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
 | Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (22 upstream-unfixed) |
 
@@ -48,7 +48,7 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 - **itzg/docker-minecraft-server:** `2026.11.1` -> `2026.11.1` (commit `0699bd8497cb`)
 - **Upstream version changed:** `no`
 - **Eclipse Temurin 25 JRE:** `jdk-25.0.5.1+2` (amd64 & arm64 verified via Adoptium API)
-- **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.1`, `mc-server-runner 1.18.0`, `rcon-cli 1.9.0`, `restify 1.7.22`
+- **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.1`, `mc-server-runner 1.18.0`, `rcon-cli 1.10.0`, `restify 1.7.22`
 - **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`, `logback 1.5.38`, `classgraph 4.8.200`, `kotli...
 <!-- versions:end -->
 
