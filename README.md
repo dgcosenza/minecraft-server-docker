@@ -56,8 +56,8 @@ A hardened, rootless-by-default, multi-arch **Debian 13 (`trixie-slim`) + Eclips
 | Architectures | `linux/amd64, linux/arm64` |
 | Uncompressed size (per arch) | `amd64: 207.6 MB, arm64: 541.1 MB` |
 | Last verified build (UTC) | `2026-11-27` |
-| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:3e1e729a70ec2591de06242cbd1c9c6b86df3e7c7620efc2e070bd0d33b5fdb2` |
-| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:3e1e729a70ec2591de06242cbd1c9c6b86df3e7c7620efc2e070bd0d33b5fdb2` |
+| Published multi-arch digest | `dgcosenza/minecraft-server@sha256:e104db16d7ccd7e58e67455485d15e2421d762a44ce969652f7a2599f9a13cd6` |
+| GHCR mirror | `ghcr.io/dgcosenza/minecraft-server@sha256:e104db16d7ccd7e58e67455485d15e2421d762a44ce969652f7a2599f9a13cd6` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
 | Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (22 upstream-unfixed) |
 

@@ -22,7 +22,7 @@ Maintained by **Daniel G. Cosenza from FNX Labs**.
   - **Source-built helpers:** `mc-image-helper 1.80.0`, `mc-monitor 1.21.1`, `mc-server-runner 1.18.0`, `rcon-cli 1.10.0`, `restify 1.7.22`
   - **Java security overrides:** `micrometer-core 1.16.9`, `bcprov-jdk18on 1.87`, `scala-library 2.13.18`, `tools.jackson.core 3.1.9`, `logback 1.5.38`, `classgraph 4.8.200`, `kotli...
 - Vulnerability gate: **0 fixable findings of any severity** in Trivy and Grype (SBOM scan) (22 upstream-unfixed).
-- Published multi-arch digest (Docker Hub + GHCR): `dgcosenza/minecraft-server@sha256:3e1e729a70ec2591de06242cbd1c9c6b86df3e7c7620efc2e070bd0d33b5fdb2` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
+- Published multi-arch digest (Docker Hub + GHCR): `dgcosenza/minecraft-server@sha256:e104db16d7ccd7e58e67455485d15e2421d762a44ce969652f7a2599f9a13cd6` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
 ---
 
 ## [2026.11.1] — 2026-11-26
